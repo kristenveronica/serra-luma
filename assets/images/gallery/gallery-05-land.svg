@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900" role="img" aria-label="Land">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa78f"/>
+      <stop offset="1" stop-color="#7e8f74"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#sky)"/>
+  <circle cx="592" cy="234" r="72" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,900 L0,422 L0,422 L100,425 L200,506 L300,565 L400,538 L500,478 L600,473 L700,516 L800,522 L800,900 Z" fill="#5e7158" opacity="0.55"/>
+  <path d="M0,900 L0,533 L0,533 L100,536 L200,603 L300,653 L400,629 L500,580 L600,576 L700,612 L800,617 L800,900 Z" fill="#465c44" opacity="0.7"/>
+  <path d="M0,900 L0,671 L0,671 L100,674 L200,728 L300,767 L400,748 L500,709 L600,706 L700,734 L800,738 L800,900 Z" fill="#2f3e2c" opacity="0.92"/>
+  <rect width="800" height="450" fill="url(#haze)"/>
+  <text x="400" y="874" text-anchor="middle"
+    font-family="Georgia, serif" font-size="22.400000000000002"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · LAND</text>
+</svg>

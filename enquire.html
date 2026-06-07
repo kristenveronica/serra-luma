@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Enquire Privately | Serra Luma — Byron Bay Hinterland NSW</title>
+  <meta name="description" content="Enquire privately about Serra Luma. Request the Information Memorandum or arrange a private inspection. By appointment only, in the Byron Bay Hinterland, NSW." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Enquire Privately | Serra Luma" />
+  <meta property="og:description" content="Request the Information Memorandum or arrange a private inspection of Serra Luma." />
+  <meta property="og:image" content="assets/images/Land/image35.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/images/og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="index.html">Serra Luma</a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="primary-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav__has-drop">
+        <a href="estate.html" aria-haspopup="true">The Estate</a>
+        <ul class="nav__drop">
+          <li><a href="estate.html#residence">The Residence</a></li>
+          <li><a href="estate.html#studio">The Studio</a></li>
+          <li><a href="estate.html#land">The Land</a></li>
+          <li><a href="estate.html#retreat">Retreat Potential</a></li>
+        </ul>
+      </li>
+      <li><a href="future-chapters.html">Future Chapters</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="btn btn--solid nav__cta" href="enquire.html" aria-current="page">Enquire Privately</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ===================== PAGE HERO ===================== -->
+    <header class="page-hero" style="min-height:56svh">
+      <img class="page-hero__bg" src="assets/images/Land/image35.jpeg" alt="" aria-hidden="true" />
+      <div class="page-hero__inner">
+        <p class="eyebrow" style="color:var(--stone)">Serra Luma</p>
+        <h1>Enquire Privately</h1>
+        <p>A rare property deserves an unhurried conversation.</p>
+      </div>
+    </header>
+
+    <!-- ===================== ENQUIRY ===================== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="contact-grid">
+
+          <!-- Form -->
+          <div class="reveal">
+            <p class="eyebrow">Make an enquiry</p>
+            <h2 style="margin-bottom:1rem">Begin the conversation.</h2>
+            <p style="margin-bottom:2rem;max-width:48ch">
+              Whether you wish to request the Information Memorandum or arrange a private inspection,
+              a single enquiry begins the conversation.
+            </p>
+
+            <!--
+              FORM SUBMISSIONS — pre-configured for Netlify Forms (data-netlify="true").
+              On Netlify, submissions appear under "Forms" in your dashboard and become your buyer
+              database. To use another service (e.g. Formspree), set action="https://..." and method="POST".
+            -->
+            <form id="enquiry-form" class="form" name="serra-luma-enquiry" method="POST"
+                  data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="serra-luma-enquiry" />
+              <p hidden><label>Do not fill this in: <input name="bot-field" /></label></p>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+                </div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input id="country" name="country" type="text" autocomplete="country-name" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="reason">Reason for enquiry</label>
+                <select id="reason" name="reason">
+                  <option value="Private residence / family estate">Private residence / family estate</option>
+                  <option value="Wellness retreat">Wellness retreat</option>
+                  <option value="Creative sanctuary">Creative sanctuary</option>
+                  <option value="Regenerative / agricultural">Regenerative / agricultural</option>
+                  <option value="Eco tourism / accommodation">Eco tourism / accommodation</option>
+                  <option value="Investment">Investment</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Message <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></label>
+                <textarea id="message" name="message" placeholder="Tell us a little about what draws you to Serra Luma."></textarea>
+              </div>
+
+              <div class="check-row">
+                <input id="im" name="information-memorandum" type="checkbox" value="Yes — please send the Information Memorandum" />
+                <label for="im">Please send me the Information Memorandum.</label>
+              </div>
+
+              <div style="margin-top:0.5rem">
+                <button class="btn btn--solid" type="submit">Enquire Privately</button>
+              </div>
+              <p class="form__status" role="status" aria-live="polite"></p>
+              <p class="privacy-note" style="margin-left:0;margin-right:0;text-align:left;max-width:none">
+                Private inspections by appointment only. Exact property address released to
+                qualified buyers and agents upon enquiry.
+              </p>
+              <p class="form__note">Your details are kept private and used only to respond to your enquiry.</p>
+            </form>
+          </div>
+
+          <!-- Contact card -->
+          <aside class="contact-card reveal" data-delay="1">
+            <h3>Private enquiries</h3>
+            <dl>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:hello@serraluma.com">hello@serraluma.com</a></dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Chowan Creek, Byron Bay Hinterland NSW</dd>
+              </div>
+              <div>
+                <dt>Inspections</dt>
+                <dd>By private appointment only</dd>
+              </div>
+              <div>
+                <dt>Address</dt>
+                <dd>Released to qualified buyers &amp; agents upon enquiry</dd>
+              </div>
+              <div>
+                <dt>Agent</dt>
+                <dd>[ Agent / agency name ]</dd>
+              </div>
+            </dl>
+            <p class="privacy-note privacy-note--light" style="margin-left:0;margin-right:0;text-align:left">
+              To protect the privacy and security of the property, inspections are strictly
+              by prior arrangement.
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRIVACY REASSURANCE ===================== -->
+    <section class="section" style="background:var(--stone)">
+      <div class="wrap text-col center">
+        <p class="eyebrow reveal">Discretion</p>
+        <h2 class="reveal" data-delay="1" style="margin-bottom:1.5rem">Private inspections, thoughtfully arranged.</h2>
+        <p class="lead reveal" data-delay="2">
+          Serra Luma is available for inspection by appointment only. To protect the privacy and security
+          of the property, the exact address and access details are released only to qualified buyers and
+          licensed agents following enquiry.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__name">Serra Luma</p>
+      <p class="footer__loc">Chowan Creek · Byron Bay Hinterland NSW</p>
+      <div class="footer__cta">
+        <a class="btn btn--light" href="enquire.html">Enquire Privately</a>
+      </div>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="estate.html">The Estate</a></li>
+        <li><a href="future-chapters.html">Future Chapters</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="enquire.html">Enquire</a></li>
+      </ul>
+      <p class="footer__disclaimer">
+        © <span data-year>2026</span> Serra Luma. All information contained herein is provided as a guide only
+        and is believed to be accurate at the time of publication. Prospective purchasers should make their own
+        enquiries and rely on their own independent advice. Areas, dimensions, distances and approvals are
+        approximate and subject to verification. Any future-use or development potential is subject to relevant
+        council and authority approvals.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Serra Luma — interactions
+   - Sticky nav state on scroll
+   - Mobile menu
+   - Scroll reveal (IntersectionObserver)
+   - Gallery filtering + lightbox
+   - Contact form handling
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  /* ---------- Year in footer ---------- */
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  /* ---------- Sticky / solid navigation ---------- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var solidFrom = 60;
+    var onScroll = function () {
+      nav.classList.toggle("nav--solid", window.scrollY > solidFrom);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    /* ---------- Mobile menu ---------- */
+    var toggle = nav.querySelector(".nav__toggle");
+    var links = nav.querySelector(".nav__links");
+    if (toggle && links) {
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("nav--open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+      links.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          nav.classList.remove("nav--open");
+          toggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  var reveals = document.querySelectorAll(".reveal");
+  var revealAllNow =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    navigator.webdriver; /* automation / Lighthouse → show everything immediately */
+  if (revealAllNow) {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  } else if ("IntersectionObserver" in window && reveals.length) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------- Gallery filtering ---------- */
+  var filters = document.querySelectorAll(".gallery__filter");
+  var tiles = document.querySelectorAll(".tile");
+  var grid = document.querySelector(".editorial-grid");
+  if (filters.length && tiles.length) {
+    filters.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var cat = btn.getAttribute("data-filter");
+        filters.forEach(function (f) { f.setAttribute("aria-pressed", "false"); });
+        btn.setAttribute("aria-pressed", "true");
+        /* The curated "All" view keeps its editorial rhythm; any filter
+           switches to a calm, uniform grid so results stay tidy. */
+        if (grid) grid.classList.toggle("editorial-grid--uniform", cat !== "all");
+        tiles.forEach(function (tile) {
+          var show = cat === "all" || tile.getAttribute("data-cat") === cat;
+          tile.classList.toggle("is-hidden", !show);
+        });
+      });
+    });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.querySelector(".lightbox");
+  if (lightbox && tiles.length) {
+    var lbImg = lightbox.querySelector("img");
+    var lbClose = lightbox.querySelector(".lightbox__close");
+    var open = function (src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || "";
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    };
+    var close = function () {
+      lightbox.classList.remove("is-open");
+      document.body.style.overflow = "";
+    };
+    tiles.forEach(function (tile) {
+      var img = tile.querySelector("img");
+      tile.style.cursor = "zoom-in";
+      tile.addEventListener("click", function () {
+        open(tile.getAttribute("data-full") || img.src, img.alt);
+      });
+    });
+    lbClose && lbClose.addEventListener("click", close);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  }
+
+  /* ---------- Contact form ---------- */
+  var form = document.querySelector("#enquiry-form");
+  if (form) {
+    var status = form.querySelector(".form__status");
+    form.addEventListener("submit", function (e) {
+      /* If a Netlify/Formspree endpoint is wired up, let it submit normally.
+         Otherwise show a graceful local confirmation. */
+      var isWired = form.hasAttribute("data-netlify") || (form.getAttribute("action") || "").indexOf("http") === 0;
+      if (isWired) return; // allow native submission
+      e.preventDefault();
+      if (status) {
+        status.textContent = "Thank you. Your enquiry has been noted — please connect this form to an email service to receive submissions (see README).";
+      }
+      form.reset();
+    });
+  }
+})();

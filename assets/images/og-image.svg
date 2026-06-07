@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Lifestyle Acreage">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B8845F"/>
+      <stop offset="1" stop-color="#d8b58c"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <circle cx="888" cy="163.8" r="56.699999999999996" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,630 L0,288 L0,288 L150,330 L300,379 L450,377 L600,341 L750,335 L900,366 L1050,380 L1200,340 L1200,630 Z" fill="#6e7e74" opacity="0.55"/>
+  <path d="M0,630 L0,367 L0,367 L150,402 L300,443 L450,441 L600,412 L750,406 L900,432 L1050,444 L1200,411 L1200,630 Z" fill="#4a5a52" opacity="0.7"/>
+  <path d="M0,630 L0,465 L0,465 L150,493 L300,526 L450,524 L600,501 L750,496 L900,517 L1050,526 L1200,500 L1200,630 Z" fill="#1F2A30" opacity="0.92"/>
+  <rect width="1200" height="315" fill="url(#haze)"/>
+  <text x="600" y="604" text-anchor="middle"
+    font-family="Georgia, serif" font-size="33.6"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · LIFESTYLE ACREAGE</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="980" viewBox="0 0 800 980" role="img" aria-label="Creek">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d8f86"/>
+      <stop offset="1" stop-color="#9ca89a"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="980" fill="url(#sky)"/>
+  <circle cx="592" cy="254.8" r="72" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,980 L0,447 L0,447 L100,513 L200,590 L300,586 L400,531 L500,521 L600,570 L700,591 L800,529 L800,980 Z" fill="#6b8278" opacity="0.55"/>
+  <path d="M0,980 L0,570 L0,570 L100,625 L200,689 L300,686 L400,640 L500,631 L600,673 L700,690 L800,639 L800,980 Z" fill="#4d6359" opacity="0.7"/>
+  <path d="M0,980 L0,723 L0,723 L100,767 L200,818 L300,816 L400,779 L500,772 L600,805 L700,819 L800,778 L800,980 Z" fill="#324038" opacity="0.92"/>
+  <rect width="800" height="490" fill="url(#haze)"/>
+  <text x="400" y="954" text-anchor="middle"
+    font-family="Georgia, serif" font-size="22.400000000000002"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · CREEK</text>
+</svg>

@@ -1,0 +1,57 @@
+# Netlify configuration — Serra Luma (static site, no build step)
+[build]
+  publish = "."
+  command = ""
+
+# Long cache for static assets (they are versioned by filename when you replace them)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Friendly clean URLs (optional) — /estate instead of /estate.html
+[[redirects]]
+  from = "/estate"
+  to = "/estate.html"
+  status = 200
+
+[[redirects]]
+  from = "/future-chapters"
+  to = "/future-chapters.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 200
+
+[[redirects]]
+  from = "/enquire"
+  to = "/enquire.html"
+  status = 200
+
+# Old URLs → new homes (preserve any shared links / SEO)
+[[redirects]]
+  from = "/contact"
+  to = "/enquire.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/enquire.html"
+  status = 301
+
+[[redirects]]
+  from = "/property-details"
+  to = "/estate.html"
+  status = 301
+
+[[redirects]]
+  from = "/property-details.html"
+  to = "/estate.html"
+  status = 301

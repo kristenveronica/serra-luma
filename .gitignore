@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local Claude Code / editor config
+.claude/
+
+# Internal strategy document — kept out of the public repository.
+# Remove this line if you want it versioned/published.
+assets/Serra Luma Website Structure.pdf
+
+# Superseded original floor plan (unused; may still show the street address).
+# The site uses the address-scrubbed assets/images/Floorplan.png instead.
+assets/images/floorplan1.jpeg

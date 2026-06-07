@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="The Residence">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c3a40"/>
+      <stop offset="1" stop-color="#48565b"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <circle cx="1420.8" cy="280.8" r="97.2" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,1080 L0,520 L0,520 L240,608 L480,645 L720,601 L960,566 L1200,608 L1440,666 L1680,637 L1920,538 L1920,1080 Z" fill="#5c6a64" opacity="0.55"/>
+  <path d="M0,1080 L0,651 L0,651 L240,724 L480,756 L720,719 L960,689 L1200,725 L1440,773 L1680,749 L1920,666 L1920,1080 Z" fill="#3d4a44" opacity="0.7"/>
+  <path d="M0,1080 L0,815 L0,815 L240,873 L480,898 L720,869 L960,845 L1200,873 L1440,912 L1680,893 L1920,827 L1920,1080 Z" fill="#1F2A30" opacity="0.92"/>
+  <rect width="1920" height="540" fill="url(#haze)"/>
+  <text x="960" y="1054" text-anchor="middle"
+    font-family="Georgia, serif" font-size="53.76"
+    letter-spacing="3" fill="#E8E0D2" opacity="0.85">SERRA LUMA · THE RESIDENCE</text>
+</svg>

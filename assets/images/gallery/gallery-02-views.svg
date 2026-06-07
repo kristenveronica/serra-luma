@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Views">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B8845F"/>
+      <stop offset="1" stop-color="#d8b58c"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="592" cy="156" r="54" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,600 L0,274 L0,274 L100,314 L200,361 L300,359 L400,325 L500,319 L600,349 L700,362 L800,324 L800,600 Z" fill="#6e7e74" opacity="0.55"/>
+  <path d="M0,600 L0,349 L0,349 L100,383 L200,422 L300,420 L400,392 L500,387 L600,412 L700,423 L800,391 L800,600 Z" fill="#4a5a52" opacity="0.7"/>
+  <path d="M0,600 L0,443 L0,443 L100,469 L200,501 L300,499 L400,477 L500,472 L600,493 L700,501 L800,476 L800,600 Z" fill="#1F2A30" opacity="0.92"/>
+  <rect width="800" height="300" fill="url(#haze)"/>
+  <text x="400" y="574" text-anchor="middle"
+    font-family="Georgia, serif" font-size="22.400000000000002"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · VIEWS</text>
+</svg>

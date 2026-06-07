@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Ridgeline">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4a50"/>
+      <stop offset="1" stop-color="#6b7a72"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <circle cx="1420.8" cy="280.8" r="97.2" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,1080 L0,506 L0,506 L240,510 L480,608 L720,678 L960,645 L1200,573 L1440,568 L1680,620 L1920,626 L1920,1080 Z" fill="#4a5a52" opacity="0.55"/>
+  <path d="M0,1080 L0,640 L0,640 L240,643 L480,724 L720,783 L960,755 L1200,696 L1440,691 L1680,734 L1920,740 L1920,1080 Z" fill="#2f3c38" opacity="0.7"/>
+  <path d="M0,1080 L0,805 L0,805 L240,808 L480,873 L720,920 L960,898 L1200,850 L1440,847 L1680,881 L1920,886 L1920,1080 Z" fill="#1F2A30" opacity="0.92"/>
+  <rect width="1920" height="540" fill="url(#haze)"/>
+  <text x="960" y="1054" text-anchor="middle"
+    font-family="Georgia, serif" font-size="53.76"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · RIDGELINE</text>
+</svg>

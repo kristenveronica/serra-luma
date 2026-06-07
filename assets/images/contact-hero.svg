@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Enquire">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d8f86"/>
+      <stop offset="1" stop-color="#9ca89a"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <circle cx="1420.8" cy="280.8" r="97.2" fill="#ffffff" opacity="0.16"/>
+  <path d="M0,1080 L0,493 L0,493 L240,565 L480,650 L720,646 L960,585 L1200,574 L1440,628 L1680,652 L1920,583 L1920,1080 Z" fill="#6b8278" opacity="0.55"/>
+  <path d="M0,1080 L0,629 L0,629 L240,689 L480,760 L720,756 L960,706 L1200,696 L1440,741 L1680,761 L1920,704 L1920,1080 Z" fill="#4d6359" opacity="0.7"/>
+  <path d="M0,1080 L0,797 L0,797 L240,845 L480,901 L720,899 L960,858 L1200,850 L1440,887 L1680,902 L1920,857 L1920,1080 Z" fill="#324038" opacity="0.92"/>
+  <rect width="1920" height="540" fill="url(#haze)"/>
+  <text x="960" y="1054" text-anchor="middle"
+    font-family="Georgia, serif" font-size="53.76"
+    letter-spacing="3" fill="#F7F3EA" opacity="0.85">SERRA LUMA · ENQUIRE</text>
+</svg>
