@@ -67,6 +67,24 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  /* ---------- Smooth image fade-in on load ----------
+     Only images that have not already painted are hidden, so cached images
+     never flash. A simple 260ms opacity fade — no scaling, no slide, no
+     layout shift — keeps the gallery calm and predictable while scrolling. */
+  var fadeImgs = document.querySelectorAll(
+    ".editorial-grid img, .gallery-immersive img, .poss-grid img"
+  );
+  fadeImgs.forEach(function (img) {
+    if (img.complete && img.naturalWidth) {
+      img.classList.add("is-loaded"); /* already painted — no fade needed */
+      return;
+    }
+    img.classList.add("img-fade");
+    var reveal = function () { img.classList.add("is-loaded"); };
+    img.addEventListener("load", reveal);
+    img.addEventListener("error", reveal);
+  });
+
   /* ---------- Gallery filtering ---------- */
   var filters = document.querySelectorAll(".gallery__filter");
   var tiles = document.querySelectorAll(".tile");

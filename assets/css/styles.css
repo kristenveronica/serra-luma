@@ -234,11 +234,15 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .btn-row--center { justify-content: center; }
 
-/* Nav CTA */
+/* Nav CTA — restrained, elegant bronze (slightly lighter visual weight) */
 .nav__cta {
-  padding: 0.65rem 1.35rem;
-  font-size: 0.72rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  background: #A98A5A;          /* softer, more restrained bronze than --clay */
+  color: var(--forest-deep);
 }
+.nav__cta:hover { background: #957542; }
 
 /* ==========================================================================
    Hero
@@ -655,6 +659,23 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .reveal[data-delay="2"] { transition-delay: 0.24s; }
 .reveal[data-delay="3"] { transition-delay: 0.36s; }
 
+/* Gallery grids reveal as a calm fade only — no slide, no layout shift.
+   Combined with per-image fade-in, this keeps scrolling seamless. */
+.editorial-grid.reveal,
+.gallery-immersive.reveal,
+.poss-grid.reveal {
+  transform: none;
+  transition: opacity 0.4s var(--ease);
+}
+
+/* Per-image fade-in on load — only images not already painted are hidden,
+   so there is no flash for cached images. Simple opacity, no scaling. */
+.img-fade { opacity: 0; }
+.img-fade.is-loaded {
+  opacity: 1;
+  transition: opacity 0.26s var(--ease);
+}
+
 /* Skip link */
 .skip-link {
   position: absolute; left: 50%; transform: translateX(-50%) translateY(-150%);
@@ -884,6 +905,15 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .gallery-immersive .tile--wide { grid-column: span 4; grid-row: span 1; }
 .gallery-immersive .tile--tall { grid-column: span 2; grid-row: span 2; }
 .gallery-immersive .tile--full { grid-column: span 6; grid-row: span 2; }
+/* Panoramic closing image — a deliberate final visual moment. Its caption
+   sits persistently, signalling the curated end of the journey. */
+.gallery-immersive .tile--full .tile__cap {
+  opacity: 1;
+  transform: none;
+  font-size: 0.72rem;
+  padding: 2.5rem 1.6rem 1.6rem;
+  letter-spacing: 0.22em;
+}
 @media (max-width: 1000px) {
   .gallery-immersive { grid-template-columns: repeat(4, 1fr); }
   .gallery-immersive .tile--feature,
