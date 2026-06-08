@@ -3,11 +3,25 @@
   publish = "."
   command = ""
 
-# Long cache for static assets (they are versioned by filename when you replace them)
+# CSS/JS are edited in place (no fingerprinted filenames), so they must always
+# revalidate — otherwise browsers serve a stale stylesheet for up to a year.
+# Revalidation is cheap: Netlify returns 304 when the file is unchanged.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Images change rarely — cache for a day, but still revalidate so replacements
+# (same filename) propagate within 24h rather than being pinned for a year.
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
 
 [[headers]]
   for = "/*.html"
