@@ -302,42 +302,17 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   font-size: clamp(1.3rem, 3.5vw, 2.2rem);
   font-weight: 400;
   color: var(--stone);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
-.hero__address {
-  font-size: 0.8rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(244,239,228,0.85);
-  margin-bottom: 2.75rem;
-}
-.hero .btn-row { justify-content: center; }
-
-.scroll-cue {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(244,239,228,0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-.scroll-cue::after {
-  content: "";
-  width: 1px; height: 42px;
-  background: linear-gradient(rgba(244,239,228,0.8), transparent);
-  animation: cue 2.4s var(--ease) infinite;
-}
-@keyframes cue {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+/* Introduction — the descriptive line + CTA, moved below the hero/video */
+.hero-intro { text-align: center; padding-block: clamp(3.5rem, 8vw, 6rem); }
+.hero-intro__lead {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 1.05rem + 1.6vw, 2.15rem);
+  line-height: 1.45;
+  color: var(--forest);
+  max-width: 780px;
+  margin: 0 auto 2.25rem;
 }
 
 /* Page hero (interior pages) */
@@ -1060,12 +1035,11 @@ a, button, .tile, .poss-card, .btn {
   }
 }
 
-/* Phone layout: tighten the vertical rhythm so pages don't feel endless,
-   and ease the hero metrics so the address line breathes. */
+/* Phone layout: tighten the vertical rhythm so pages don't feel endless. */
 @media (max-width: 620px) {
   :root { --space-section: clamp(3.25rem, 9vw, 4.75rem); }
   .gallery__head { margin-bottom: 2rem; }
   .hero__inner { padding-top: 6rem; }
-  .hero__address { letter-spacing: 0.18em; font-size: 0.74rem; }
+  .hero-intro__lead { font-size: clamp(1.25rem, 1rem + 2.4vw, 1.6rem); }
   .footer__links { gap: 1.25rem 1.75rem; }
 }
