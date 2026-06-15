@@ -304,16 +304,23 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--stone);
   margin-bottom: 0;
 }
-/* Introduction — the descriptive line + CTA, moved below the hero/video */
-.hero-intro { text-align: center; padding-block: clamp(3.5rem, 8vw, 6rem); }
+/* Introduction — the descriptive line moved below the hero/video.
+   Tight bottom spacing so it reads as a lead-in to The Story just below. */
+.hero-intro {
+  text-align: center;
+  padding-top: clamp(3.5rem, 8vw, 6rem);
+  padding-bottom: 0;
+}
 .hero-intro__lead {
   font-family: var(--serif);
   font-size: clamp(1.4rem, 1.05rem + 1.6vw, 2.15rem);
   line-height: 1.45;
   color: var(--forest);
   max-width: 780px;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto;
 }
+/* Pull The Story up close to the introduction line on the homepage */
+#story { padding-top: clamp(2.5rem, 6vw, 4rem); }
 
 /* Page hero (interior pages) */
 .page-hero {
