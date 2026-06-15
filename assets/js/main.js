@@ -43,6 +43,30 @@
     }
   }
 
+  /* ---------- Hero video: guarantee playback ----------
+     The `autoplay` attribute can be ignored (Safari's per-site setting, iOS/macOS
+     Low Power Mode, data-saver, etc.), leaving just the poster. Force play once
+     the data is ready, and as a fallback start it on the first user interaction. */
+  var heroVid = document.querySelector(".hero__media");
+  if (heroVid) {
+    heroVid.muted = true; /* required for inline autoplay, esp. iOS */
+    var tryPlayHero = function () {
+      var pr = heroVid.play();
+      if (pr && pr.catch) pr.catch(function () {});
+    };
+    if (heroVid.readyState >= 2) tryPlayHero();
+    heroVid.addEventListener("loadeddata", tryPlayHero);
+    heroVid.addEventListener("canplay", tryPlayHero);
+    var kickEvents = ["touchstart", "pointerdown", "click", "scroll", "keydown"];
+    var kickHero = function () {
+      tryPlayHero();
+      kickEvents.forEach(function (ev) { window.removeEventListener(ev, kickHero); });
+    };
+    kickEvents.forEach(function (ev) {
+      window.addEventListener(ev, kickHero, { passive: true });
+    });
+  }
+
   /* ---------- Scroll reveal ---------- */
   var reveals = document.querySelectorAll(".reveal");
   var revealAllNow =
