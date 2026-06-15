@@ -137,6 +137,31 @@
     });
   }
 
+  /* ---------- The Film (click-to-play) ----------
+     With JS present we hide native controls behind a custom poster button until
+     the viewer plays; on play we reveal the controls. No-JS users still get a
+     native player (the markup keeps `controls`). */
+  var film = document.querySelector(".film");
+  if (film) {
+    var fv = film.querySelector(".film__video");
+    var fbtn = film.querySelector(".film__play");
+    if (fv) {
+      fv.removeAttribute("controls");
+      var playFilm = function () {
+        fv.setAttribute("controls", "");
+        film.classList.add("is-playing");
+        var p = fv.play();
+        if (p && p.catch) p.catch(function () {});
+      };
+      if (fbtn) fbtn.addEventListener("click", playFilm);
+      fv.addEventListener("ended", function () {
+        film.classList.remove("is-playing");
+        fv.removeAttribute("controls");
+        fv.currentTime = 0;
+      });
+    }
+  }
+
   /* ---------- Contact form ---------- */
   var form = document.querySelector("#enquiry-form");
   if (form) {

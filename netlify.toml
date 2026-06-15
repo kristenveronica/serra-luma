@@ -23,6 +23,13 @@
   [headers.values]
     Cache-Control = "public, max-age=86400, must-revalidate"
 
+# Video is large and rarely changes — cache for a week, revalidating so any
+# replacement still propagates. Keeps repeat-visit bandwidth down.
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
 [[headers]]
   for = "/*.html"
   [headers.values]
