@@ -52,9 +52,12 @@
           <p class="eyebrow reveal">Gallery</p>
           <h2 class="reveal" data-delay="1">An immersive journey through Serra Luma</h2>
           <p class="lead reveal" data-delay="2" style="max-width:600px;margin:1.25rem auto 0">
-            Arrival, landscape, architecture, living, the studio, the land and the creek.
-            Select any image to view it in full.
+            Arrival, landscape, architecture, living, the studio, the land and the waters.
           </p>
+          <div class="gallery__filters reveal" data-delay="2" role="group" aria-label="Filter the gallery">
+            <button class="gallery__filter" type="button" data-filter="estate" aria-pressed="true">The Estate</button>
+            <button class="gallery__filter" type="button" data-filter="wildlife" aria-pressed="false">The Wildlife</button>
+          </div>
         </div>
 
         <!-- Curated from beginning to end. The grid is composed so every row fills
@@ -63,35 +66,36 @@
              feature(4×2)+two tiles, or wide(4×1)+one tile, or the closing full(6×2). -->
         <div class="gallery-immersive reveal" data-delay="1">
           <!-- Block 1 — arrival & the architecture in its setting -->
-          <figure class="tile tile--feature" data-full="assets/images/Land/image2.jpeg"><img loading="lazy" src="assets/images/Land/image2.jpeg" alt="Wollumbin rising beyond the native gardens at first arrival" /><figcaption class="tile__cap">Arrival</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image15.jpeg"><img loading="lazy" src="assets/images/Main%20House/image15.jpeg" alt="The timber pavilion settled along the ridgeline" /><figcaption class="tile__cap">The Ridgeline</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image8.jpeg"><img loading="lazy" src="assets/images/Main%20House/image8.jpeg" alt="Elevated pavilion with deep verandahs among the treetops" /><figcaption class="tile__cap">Among the Treetops</figcaption></figure>
+          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Land/image2.jpeg"><img loading="lazy" src="assets/images/Land/image2.jpeg" alt="Wollumbin rising beyond the native gardens at first arrival" /><figcaption class="tile__cap">Arrival</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image15.jpeg"><img loading="lazy" src="assets/images/Main%20House/image15.jpeg" alt="The timber pavilion settled along the ridgeline" /><figcaption class="tile__cap">The Ridgeline</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image8.jpeg"><img loading="lazy" src="assets/images/Main%20House/image8.jpeg" alt="Elevated pavilion with deep verandahs among the treetops" /><figcaption class="tile__cap">Among the Treetops</figcaption></figure>
 
           <!-- Block 2 — the outlook -->
-          <figure class="tile tile--wide" data-full="assets/images/Land/image7.jpeg"><img loading="lazy" src="assets/images/Land/image7.jpeg" alt="Valley panorama opening out below the deck" /><figcaption class="tile__cap">The Valley Below</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image3.jpeg"><img loading="lazy" src="assets/images/Main%20House/image3.jpeg" alt="Early light across the wraparound veranda" /><figcaption class="tile__cap">Morning Light</figcaption></figure>
+          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Land/image7.jpeg"><img loading="lazy" src="assets/images/Land/image7.jpeg" alt="Valley panorama opening out below the deck" /><figcaption class="tile__cap">The Valley Below</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image3.jpeg"><img loading="lazy" src="assets/images/Main%20House/image3.jpeg" alt="Early light across the wraparound veranda" /><figcaption class="tile__cap">Morning Light</figcaption></figure>
 
           <!-- Block 3 — gathering & living -->
-          <figure class="tile tile--feature" data-full="assets/images/Main%20House/main.jpeg"><img loading="lazy" src="assets/images/Main%20House/main.jpeg" alt="Open-plan living and dining beneath cathedral ceilings" /><figcaption class="tile__cap">Gathering</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image11.jpeg"><img loading="lazy" src="assets/images/Main%20House/image11.jpeg" alt="Marble and timber kitchen with valley outlook" /><figcaption class="tile__cap">Where Days Begin</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image22.jpeg"><img loading="lazy" src="assets/images/Main%20House/image22.jpeg" alt="Living room with wood heater beneath timber trusses" /><figcaption class="tile__cap">Evenings In</figcaption></figure>
+          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Main%20House/main.jpeg"><img loading="lazy" src="assets/images/Main%20House/main.jpeg" alt="Open-plan living and dining beneath cathedral ceilings" /><figcaption class="tile__cap">Gathering</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image11.jpeg"><img loading="lazy" src="assets/images/Main%20House/image11.jpeg" alt="Marble and timber kitchen with valley outlook" /><figcaption class="tile__cap">Where Days Begin</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image22.jpeg"><img loading="lazy" src="assets/images/Main%20House/image22.jpeg" alt="Living room with wood heater beneath timber trusses" /><figcaption class="tile__cap">Evenings In</figcaption></figure>
 
           <!-- Block 4 — the long view & rest -->
-          <figure class="tile tile--wide" data-full="assets/images/Main%20House/image26.jpeg"><img loading="lazy" src="assets/images/Main%20House/image26.jpeg" alt="Valley view framed by timber windows" /><figcaption class="tile__cap">The Long View</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image24.jpeg"><img loading="lazy" src="assets/images/Main%20House/image24.jpeg" alt="Loft-style master retreat beneath the trusses" /><figcaption class="tile__cap">Sanctuary</figcaption></figure>
+          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Main%20House/image26.jpeg"><img loading="lazy" src="assets/images/Main%20House/image26.jpeg" alt="Valley view framed by timber windows" /><figcaption class="tile__cap">The Long View</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image24.jpeg"><img loading="lazy" src="assets/images/Main%20House/image24.jpeg" alt="Loft-style master retreat beneath the trusses" /><figcaption class="tile__cap">Sanctuary</figcaption></figure>
 
           <!-- Block 5 — the land, the studio & stillness -->
-          <figure class="tile tile--feature" data-full="assets/images/Main%20House/image9.jpeg"><img loading="lazy" src="assets/images/Main%20House/image9.jpeg" alt="Aerial over the estate and forested ridgeline" /><figcaption class="tile__cap">The Land</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Studio/image31.jpeg"><img loading="lazy" src="assets/images/Studio/image31.jpeg" alt="Open-plan guest studio living and kitchen" /><figcaption class="tile__cap">The Studio</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Main%20House/image29.jpeg"><img loading="lazy" src="assets/images/Main%20House/image29.jpeg" alt="Designer bathroom with deep soaking tub" /><figcaption class="tile__cap">Stillness</figcaption></figure>
+          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Main%20House/image9.jpeg"><img loading="lazy" src="assets/images/Main%20House/image9.jpeg" alt="Aerial over the estate and forested ridgeline" /><figcaption class="tile__cap">The Land</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Studio/image31.jpeg"><img loading="lazy" src="assets/images/Studio/image31.jpeg" alt="Open-plan guest studio living and kitchen" /><figcaption class="tile__cap">The Studio</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image29.jpeg"><img loading="lazy" src="assets/images/Main%20House/image29.jpeg" alt="Designer bathroom with deep soaking tub" /><figcaption class="tile__cap">Stillness</figcaption></figure>
 
           <!-- Block 6 — gardens & quiet quarters -->
-          <figure class="tile tile--wide" data-full="assets/images/Land/image18.jpeg"><img loading="lazy" src="assets/images/Land/image18.jpeg" alt="Landscaped native gardens toward Wollumbin" /><figcaption class="tile__cap">Native Gardens</figcaption></figure>
-          <figure class="tile" data-full="assets/images/Studio/image33.jpeg"><img loading="lazy" src="assets/images/Studio/image33.jpeg" alt="Studio bedroom opening to the living area" /><figcaption class="tile__cap">Quiet Quarters</figcaption></figure>
+          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Land/image18.jpeg"><img loading="lazy" src="assets/images/Land/image18.jpeg" alt="Landscaped native gardens toward Wollumbin" /><figcaption class="tile__cap">Native Gardens</figcaption></figure>
+          <figure class="tile" data-cat="estate" data-full="assets/images/Studio/image33.jpeg"><img loading="lazy" src="assets/images/Studio/image33.jpeg" alt="Studio bedroom opening to the living area" /><figcaption class="tile__cap">Quiet Quarters</figcaption></figure>
 
           <!-- Closing — a full-width panoramic moment -->
-          <figure class="tile tile--full" data-full="assets/images/Land/image35.jpeg"><img loading="lazy" src="assets/images/Land/image35.jpeg" alt="Chowan Creek frontage winding through the estate" /><figcaption class="tile__cap">The Creek</figcaption></figure>
+          <figure class="tile tile--full" data-cat="estate" data-full="assets/images/Land/image35.jpeg"><img loading="lazy" src="assets/images/Land/image35.jpeg" alt="Chowan Creek frontage winding through the estate" /><figcaption class="tile__cap">The Creek</figcaption></figure>
         </div>
+        <p class="gallery-empty" hidden>The Wildlife collection is being curated — please check back soon.</p>
 
         <div class="btn-row btn-row--center reveal" style="margin-top:3.5rem">
           <a class="btn btn--solid" href="enquire.html">Enquire Privately</a>

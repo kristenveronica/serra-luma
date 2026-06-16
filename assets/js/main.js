@@ -18,8 +18,12 @@
   var nav = document.querySelector(".nav");
   if (nav) {
     var solidFrom = 60;
+    /* Pages without a dark hero (e.g. the Gallery) start on a light background,
+       where the transparent nav's light text would be invisible — keep the nav
+       solid from the top in that case. */
+    var hasDarkHeader = !!document.querySelector(".hero, .page-hero");
     var onScroll = function () {
-      nav.classList.toggle("nav--solid", window.scrollY > solidFrom);
+      nav.classList.toggle("nav--solid", !hasDarkHeader || window.scrollY > solidFrom);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -113,6 +117,7 @@
   var filters = document.querySelectorAll(".gallery__filter");
   var tiles = document.querySelectorAll(".tile");
   var grid = document.querySelector(".editorial-grid");
+  var galleryEmpty = document.querySelector(".gallery-empty");
   if (filters.length && tiles.length) {
     filters.forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -122,10 +127,14 @@
         /* The curated "All" view keeps its editorial rhythm; any filter
            switches to a calm, uniform grid so results stay tidy. */
         if (grid) grid.classList.toggle("editorial-grid--uniform", cat !== "all");
+        var visible = 0;
         tiles.forEach(function (tile) {
           var show = cat === "all" || tile.getAttribute("data-cat") === cat;
           tile.classList.toggle("is-hidden", !show);
+          if (show) visible++;
         });
+        /* Show a graceful note when a category has no images yet. */
+        if (galleryEmpty) galleryEmpty.hidden = visible > 0;
       });
     });
   }
@@ -190,6 +199,20 @@
   var form = document.querySelector("#enquiry-form");
   if (form) {
     var status = form.querySelector(".form__status");
+
+    /* Prefill based on which CTA button brought the visitor here
+       (enquire.html?intent=im / ?intent=inspection). */
+    var intent = new URLSearchParams(window.location.search).get("intent");
+    if (intent === "im") {
+      var imBox = form.querySelector("#im");
+      if (imBox) imBox.checked = true;
+    } else if (intent === "inspection") {
+      var msg = form.querySelector("#message");
+      if (msg && !msg.value) {
+        msg.value = "I would like to arrange a private inspection of Serra Luma.";
+      }
+    }
+
     form.addEventListener("submit", function (e) {
       /* If a Netlify/Formspree endpoint is wired up, let it submit normally.
          Otherwise show a graceful local confirmation. */

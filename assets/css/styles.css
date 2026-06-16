@@ -304,22 +304,36 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--stone);
   margin-bottom: 0;
 }
-/* Introduction — the descriptive line moved below the hero/video.
-   Tight bottom spacing so it reads as a lead-in to The Story just below. */
+/* Introduction — a dark card below the hero/video holding the positioning
+   line and a visitor note, giving clean separation from The Story below. */
 .hero-intro {
   text-align: center;
   padding-top: clamp(3.5rem, 8vw, 6rem);
-  padding-bottom: 0;
+  padding-bottom: clamp(3rem, 7vw, 5rem);
 }
-.hero-intro__lead {
+.intro-card {
+  max-width: 920px;
+  margin-inline: auto;
+  background: var(--forest);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-lg);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 5vw, 4rem);
+}
+.intro-card__lead {
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 1.05rem + 1.6vw, 2.15rem);
+  font-size: clamp(1.4rem, 1.05rem + 1.5vw, 2.1rem);
   line-height: 1.45;
-  color: var(--forest);
-  max-width: 780px;
+  color: var(--ivory);
+  max-width: 720px;
   margin: 0 auto;
 }
-/* Pull The Story up close to the introduction line on the homepage */
+.intro-card__note {
+  max-width: 620px;
+  margin: 1.75rem auto 0;
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.08rem);
+  line-height: 1.75;
+  color: var(--stone);
+}
 #story { padding-top: clamp(2.5rem, 6vw, 4rem); }
 
 /* Page hero (interior pages) */
@@ -424,6 +438,16 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .gallery__filter:hover { color: var(--ink); }
 .gallery__filter[aria-pressed="true"] { color: var(--clay); }
 .gallery__filter[aria-pressed="true"]::after { width: 100%; }
+/* Graceful note when a gallery category has no images yet */
+.gallery-empty {
+  text-align: center;
+  margin: clamp(3rem, 9vw, 7rem) auto;
+  max-width: 520px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  color: var(--muted);
+}
 
 /* Editorial grid — a curated rhythm of feature, supporting, wide and grid tiles.
    Tiles span a 6-column grid; varied spans create the magazine-style layout.
@@ -522,6 +546,10 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .band::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(28,34,36,0.56); }
 .band h2 { color: var(--ink-on-dark); margin-bottom: 1.5rem; }
 .band .lead { color: var(--stone); }
+/* Vibrant variant — a lighter wash so the photography keeps its colour,
+   with a soft text-shadow to hold legibility over the brighter image. */
+.band--vibrant::after { background: linear-gradient(rgba(20,28,30,0.28), rgba(20,28,30,0.48)); }
+.band--vibrant .story-quote { text-shadow: 0 2px 26px rgba(12,16,18,0.5); }
 
 /* CTA section */
 .cta { text-align: center; background: var(--stone); }
@@ -537,6 +565,15 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--muted);
 }
 .privacy-note--light { color: rgba(246, 241, 232, 0.72); }
+
+/* Supporting line above the split enquiry buttons */
+.enquire-note {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
 
 /* ==========================================================================
    Property details content
@@ -558,6 +595,29 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 @media (max-width: 720px) {
   .detail-block { grid-template-columns: 1fr; gap: 1rem; }
   .detail-block__title { position: static; }
+}
+
+/* Estate overview — broad land image + two-column feature list */
+.overview__media {
+  margin: clamp(2.5rem, 6vw, 4rem) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+}
+.overview__media img { width: 100%; height: 100%; object-fit: cover; }
+.overview-list {
+  list-style: none; padding: 0;
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 2.75rem;
+}
+.overview-list li { display: flex; gap: 0.85rem; align-items: baseline; line-height: 1.6; }
+.overview-list li::before {
+  content: ""; flex: none; width: 6px; height: 6px; margin-top: 0.6rem;
+  background: var(--eucalyptus); border-radius: 50%;
+}
+@media (max-width: 680px) {
+  .overview-list { grid-template-columns: 1fr; gap: 0.75rem; }
+  .overview__media { aspect-ratio: 16 / 10; }
 }
 
 /* Location list */
@@ -887,6 +947,17 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .chapter--dark .chapter__body p { color: rgba(241,236,226,0.82); }
 .chapter__num { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--clay); margin-bottom: 1rem; }
 .chapter__body h2 { margin-bottom: 1.25rem; }
+.chapter__body p + p { margin-top: 1rem; }
+/* Italic serif closing line for each chapter */
+.chapter__closer {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 0.95rem + 0.9vw, 1.55rem);
+  line-height: 1.4;
+  color: var(--forest);
+  margin-top: 1.5rem !important;
+}
+.chapter--dark .chapter__closer { color: var(--ivory); }
 @media (max-width: 820px) {
   .chapter { grid-template-columns: 1fr; }
   .chapter--reverse .chapter__media { order: 0; }
@@ -1047,6 +1118,7 @@ a, button, .tile, .poss-card, .btn {
   :root { --space-section: clamp(3.25rem, 9vw, 4.75rem); }
   .gallery__head { margin-bottom: 2rem; }
   .hero__inner { padding-top: 6rem; }
-  .hero-intro__lead { font-size: clamp(1.25rem, 1rem + 2.4vw, 1.6rem); }
+  .intro-card__lead { font-size: clamp(1.25rem, 1rem + 2.4vw, 1.6rem); }
+  .intro-card { padding: clamp(2rem, 7vw, 3rem) clamp(1.4rem, 6vw, 2.5rem); }
   .footer__links { gap: 1.25rem 1.75rem; }
 }
