@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Gallery | Serra Luma — Byron Bay Hinterland NSW</title>
-  <meta name="description" content="An immersive gallery of Serra Luma — arrival, landscape, architecture, living, the studio, the land and Chowan Creek frontage in the Byron Bay Hinterland." />
+  <meta name="description" content="An immersive gallery of Serra Luma — the residences, the grounds and the wildlife of a 134-acre sanctuary in the Byron Bay Hinterland." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gallery | Serra Luma" />
-  <meta property="og:description" content="An immersive visual journey through Serra Luma." />
-  <meta property="og:image" content="assets/images/Main%20House/image4.jpeg" />
+  <meta property="og:description" content="An immersive visual journey through Serra Luma — the residences, the grounds and the wildlife." />
+  <meta property="og:image" content="assets/images/residences/residences-01.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/images/og-image.svg" />
@@ -40,65 +40,129 @@
         </ul>
       </li>
       <li><a href="future-chapters.html">Future Chapters</a></li>
-      <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+      <li class="nav__has-drop">
+        <a href="gallery.html" aria-haspopup="true" aria-current="page">Gallery</a>
+        <ul class="nav__drop">
+          <li><a href="gallery.html#residences">The Residences</a></li>
+          <li><a href="gallery.html#grounds">The Grounds</a></li>
+          <li><a href="gallery.html#wildlife">Wild-Life</a></li>
+        </ul>
+      </li>
       <li><a class="btn btn--solid nav__cta" href="enquire.html">Enquire Privately</a></li>
     </ul>
   </nav>
 
   <main id="main">
-    <section class="section" style="padding-top:clamp(7rem,14vw,10rem)">
+    <!-- ===================== INTRO ===================== -->
+    <section class="section" style="padding-top:clamp(7rem,14vw,10rem);padding-bottom:0">
       <div class="wrap">
         <div class="gallery__head">
           <p class="eyebrow reveal">Gallery</p>
           <h2 class="reveal" data-delay="1">An immersive journey through Serra Luma</h2>
           <p class="lead reveal" data-delay="2" style="max-width:600px;margin:1.25rem auto 0">
-            Arrival, landscape, architecture, living, the studio, the land and the waters.
+            The residences, the grounds and the wildlife that make Serra Luma home.
           </p>
-          <div class="gallery__filters reveal" data-delay="2" role="group" aria-label="Filter the gallery">
-            <button class="gallery__filter" type="button" data-filter="estate" aria-pressed="true">The Estate</button>
-            <button class="gallery__filter" type="button" data-filter="wildlife" aria-pressed="false">The Wildlife</button>
+          <div class="gallery__filters reveal" data-delay="2">
+            <a class="gallery__filter" href="#residences">The Residences</a>
+            <a class="gallery__filter" href="#grounds">The Grounds</a>
+            <a class="gallery__filter" href="#wildlife">Wild-Life</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Curated from beginning to end. The grid is composed so every row fills
-             completely on desktop — no orphaned tiles, no dead space — and closes on a
-             full-width panoramic moment at Chowan Creek. Each block packs to 6 columns:
-             feature(4×2)+two tiles, or wide(4×1)+one tile, or the closing full(6×2). -->
-        <div class="gallery-immersive reveal" data-delay="1">
-          <!-- Block 1 — arrival & the architecture in its setting -->
-          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Land/image2.jpeg"><img loading="lazy" src="assets/images/Land/image2.jpeg" alt="Wollumbin rising beyond the native gardens at first arrival" /><figcaption class="tile__cap">Arrival</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image15.jpeg"><img loading="lazy" src="assets/images/Main%20House/image15.jpeg" alt="The timber pavilion settled along the ridgeline" /><figcaption class="tile__cap">The Ridgeline</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image8.jpeg"><img loading="lazy" src="assets/images/Main%20House/image8.jpeg" alt="Elevated pavilion with deep verandahs among the treetops" /><figcaption class="tile__cap">Among the Treetops</figcaption></figure>
-
-          <!-- Block 2 — the outlook -->
-          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Land/image7.jpeg"><img loading="lazy" src="assets/images/Land/image7.jpeg" alt="Valley panorama opening out below the deck" /><figcaption class="tile__cap">The Valley Below</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image3.jpeg"><img loading="lazy" src="assets/images/Main%20House/image3.jpeg" alt="Early light across the wraparound veranda" /><figcaption class="tile__cap">Morning Light</figcaption></figure>
-
-          <!-- Block 3 — gathering & living -->
-          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Main%20House/main.jpeg"><img loading="lazy" src="assets/images/Main%20House/main.jpeg" alt="Open-plan living and dining beneath cathedral ceilings" /><figcaption class="tile__cap">Gathering</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image11.jpeg"><img loading="lazy" src="assets/images/Main%20House/image11.jpeg" alt="Marble and timber kitchen with valley outlook" /><figcaption class="tile__cap">Where Days Begin</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image22.jpeg"><img loading="lazy" src="assets/images/Main%20House/image22.jpeg" alt="Living room with wood heater beneath timber trusses" /><figcaption class="tile__cap">Evenings In</figcaption></figure>
-
-          <!-- Block 4 — the long view & rest -->
-          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Main%20House/image26.jpeg"><img loading="lazy" src="assets/images/Main%20House/image26.jpeg" alt="Valley view framed by timber windows" /><figcaption class="tile__cap">The Long View</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image24.jpeg"><img loading="lazy" src="assets/images/Main%20House/image24.jpeg" alt="Loft-style master retreat beneath the trusses" /><figcaption class="tile__cap">Sanctuary</figcaption></figure>
-
-          <!-- Block 5 — the land, the studio & stillness -->
-          <figure class="tile tile--feature" data-cat="estate" data-full="assets/images/Main%20House/image9.jpeg"><img loading="lazy" src="assets/images/Main%20House/image9.jpeg" alt="Aerial over the estate and forested ridgeline" /><figcaption class="tile__cap">The Land</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Studio/image31.jpeg"><img loading="lazy" src="assets/images/Studio/image31.jpeg" alt="Open-plan guest studio living and kitchen" /><figcaption class="tile__cap">The Studio</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Main%20House/image29.jpeg"><img loading="lazy" src="assets/images/Main%20House/image29.jpeg" alt="Designer bathroom with deep soaking tub" /><figcaption class="tile__cap">Stillness</figcaption></figure>
-
-          <!-- Block 6 — gardens & quiet quarters -->
-          <figure class="tile tile--wide" data-cat="estate" data-full="assets/images/Land/image18.jpeg"><img loading="lazy" src="assets/images/Land/image18.jpeg" alt="Landscaped native gardens toward Wollumbin" /><figcaption class="tile__cap">Native Gardens</figcaption></figure>
-          <figure class="tile" data-cat="estate" data-full="assets/images/Studio/image33.jpeg"><img loading="lazy" src="assets/images/Studio/image33.jpeg" alt="Studio bedroom opening to the living area" /><figcaption class="tile__cap">Quiet Quarters</figcaption></figure>
-
-          <!-- Closing — a full-width panoramic moment -->
-          <figure class="tile tile--full" data-cat="estate" data-full="assets/images/Land/image35.jpeg"><img loading="lazy" src="assets/images/Land/image35.jpeg" alt="Chowan Creek frontage winding through the estate" /><figcaption class="tile__cap">The Creek</figcaption></figure>
+    <!-- ===================== THE RESIDENCES ===================== -->
+    <section class="section gallery-section" id="residences">
+      <div class="wrap">
+        <div class="gallery-section__head">
+          <p class="eyebrow reveal">The Architecture</p>
+          <h2 class="reveal" data-delay="1">The Residences</h2>
+          <p class="lead reveal" data-delay="2" style="max-width:560px;margin:1rem auto 0">Inside and around the timber pavilion residence and guest studio.</p>
         </div>
-        <p class="gallery-empty" hidden>The Wildlife collection is being curated — please check back soon.</p>
+        <div class="photo-masonry reveal" data-delay="1">
+          <figure class="tile" data-full="assets/images/residences/residences-01.jpg"><img loading="lazy" src="assets/images/residences/residences-01.jpg" alt="Serra Luma residence and studio (1)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-02.jpg"><img loading="lazy" src="assets/images/residences/residences-02.jpg" alt="Serra Luma residence and studio (2)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-03.jpg"><img loading="lazy" src="assets/images/residences/residences-03.jpg" alt="Serra Luma residence and studio (3)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-04.jpg"><img loading="lazy" src="assets/images/residences/residences-04.jpg" alt="Serra Luma residence and studio (4)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-05.jpg"><img loading="lazy" src="assets/images/residences/residences-05.jpg" alt="Serra Luma residence and studio (5)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-06.jpg"><img loading="lazy" src="assets/images/residences/residences-06.jpg" alt="Serra Luma residence and studio (6)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-07.jpg"><img loading="lazy" src="assets/images/residences/residences-07.jpg" alt="Serra Luma residence and studio (7)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-08.jpg"><img loading="lazy" src="assets/images/residences/residences-08.jpg" alt="Serra Luma residence and studio (8)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-09.jpg"><img loading="lazy" src="assets/images/residences/residences-09.jpg" alt="Serra Luma residence and studio (9)" /></figure>
+          <figure class="tile" data-full="assets/images/residences/residences-10.jpg"><img loading="lazy" src="assets/images/residences/residences-10.jpg" alt="Serra Luma residence and studio (10)" /></figure>
+        </div>
+      </div>
+    </section>
 
-        <div class="btn-row btn-row--center reveal" style="margin-top:3.5rem">
-          <a class="btn btn--solid" href="enquire.html">Enquire Privately</a>
+    <!-- ===================== THE GROUNDS ===================== -->
+    <section class="section gallery-section" id="grounds" style="background:var(--stone)">
+      <div class="wrap">
+        <div class="gallery-section__head">
+          <p class="eyebrow reveal">The Land</p>
+          <h2 class="reveal" data-delay="1">The Grounds</h2>
+          <p class="lead reveal" data-delay="2" style="max-width:560px;margin:1rem auto 0">Gardens, water and sweeping hinterland views across the estate.</p>
+        </div>
+        <div class="photo-masonry reveal" data-delay="1">
+          <figure class="tile" data-full="assets/images/grounds/grounds-01.jpg"><img loading="lazy" src="assets/images/grounds/grounds-01.jpg" alt="The grounds and gardens of Serra Luma (1)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-02.jpg"><img loading="lazy" src="assets/images/grounds/grounds-02.jpg" alt="The grounds and gardens of Serra Luma (2)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-03.jpg"><img loading="lazy" src="assets/images/grounds/grounds-03.jpg" alt="The grounds and gardens of Serra Luma (3)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-04.jpg"><img loading="lazy" src="assets/images/grounds/grounds-04.jpg" alt="The grounds and gardens of Serra Luma (4)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-05.jpg"><img loading="lazy" src="assets/images/grounds/grounds-05.jpg" alt="The grounds and gardens of Serra Luma (5)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-06.jpg"><img loading="lazy" src="assets/images/grounds/grounds-06.jpg" alt="The grounds and gardens of Serra Luma (6)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-07.jpg"><img loading="lazy" src="assets/images/grounds/grounds-07.jpg" alt="The grounds and gardens of Serra Luma (7)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-08.jpg"><img loading="lazy" src="assets/images/grounds/grounds-08.jpg" alt="The grounds and gardens of Serra Luma (8)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-09.jpg"><img loading="lazy" src="assets/images/grounds/grounds-09.jpg" alt="The grounds and gardens of Serra Luma (9)" /></figure>
+          <figure class="tile" data-full="assets/images/grounds/grounds-10.jpg"><img loading="lazy" src="assets/images/grounds/grounds-10.jpg" alt="The grounds and gardens of Serra Luma (10)" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WILD-LIFE ===================== -->
+    <section class="section gallery-section" id="wildlife">
+      <div class="wrap">
+        <div class="gallery-section__head">
+          <p class="eyebrow reveal">Native Life</p>
+          <h2 class="reveal" data-delay="1">Wild-Life</h2>
+          <p class="lead reveal" data-delay="2" style="max-width:560px;margin:1rem auto 0">The birds, blooms and wildlife that share the property.</p>
+        </div>
+        <div class="photo-masonry reveal" data-delay="1">
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-01.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-01.jpg" alt="Native wildlife at Serra Luma (1)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-02.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-02.jpg" alt="Native wildlife at Serra Luma (2)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-03.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-03.jpg" alt="Native wildlife at Serra Luma (3)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-04.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-04.jpg" alt="Native wildlife at Serra Luma (4)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-05.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-05.jpg" alt="Native wildlife at Serra Luma (5)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-06.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-06.jpg" alt="Native wildlife at Serra Luma (6)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-07.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-07.jpg" alt="Native wildlife at Serra Luma (7)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-08.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-08.jpg" alt="Native wildlife at Serra Luma (8)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-09.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-09.jpg" alt="Native wildlife at Serra Luma (9)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-10.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-10.jpg" alt="Native wildlife at Serra Luma (10)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-11.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-11.jpg" alt="Native wildlife at Serra Luma (11)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-12.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-12.jpg" alt="Native wildlife at Serra Luma (12)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-13.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-13.jpg" alt="Native wildlife at Serra Luma (13)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-14.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-14.jpg" alt="Native wildlife at Serra Luma (14)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-15.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-15.jpg" alt="Native wildlife at Serra Luma (15)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-16.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-16.jpg" alt="Native wildlife at Serra Luma (16)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-17.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-17.jpg" alt="Native wildlife at Serra Luma (17)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-18.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-18.jpg" alt="Native wildlife at Serra Luma (18)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-19.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-19.jpg" alt="Native wildlife at Serra Luma (19)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-20.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-20.jpg" alt="Native wildlife at Serra Luma (20)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-21.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-21.jpg" alt="Native wildlife at Serra Luma (21)" /></figure>
+          <figure class="tile" data-full="assets/images/wildlife/wildlife-22.jpg"><img loading="lazy" src="assets/images/wildlife/wildlife-22.jpg" alt="Native wildlife at Serra Luma (22)" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ENQUIRE CTA ===================== -->
+    <section class="section cta">
+      <div class="wrap text-col center">
+        <div class="divider reveal"></div>
+        <h2 class="reveal" data-delay="1">Experience Serra Luma in person.</h2>
+        <p class="enquire-note reveal" data-delay="2">
+          Enquire to receive the Information Memorandum and further information on the opportunity within.
+        </p>
+        <div class="btn-row btn-row--center reveal" data-delay="2" style="margin-top:1.75rem">
+          <a class="btn btn--solid" href="enquire.html?intent=im">Request Information Memorandum</a>
+          <a class="btn btn--ghost" href="enquire.html?intent=inspection">Arrange Private Inspection</a>
         </div>
       </div>
     </section>

@@ -113,33 +113,8 @@
     img.addEventListener("error", reveal);
   });
 
-  /* ---------- Gallery filtering ---------- */
-  var filters = document.querySelectorAll(".gallery__filter");
-  var tiles = document.querySelectorAll(".tile");
-  var grid = document.querySelector(".editorial-grid");
-  var galleryEmpty = document.querySelector(".gallery-empty");
-  if (filters.length && tiles.length) {
-    filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var cat = btn.getAttribute("data-filter");
-        filters.forEach(function (f) { f.setAttribute("aria-pressed", "false"); });
-        btn.setAttribute("aria-pressed", "true");
-        /* The curated "All" view keeps its editorial rhythm; any filter
-           switches to a calm, uniform grid so results stay tidy. */
-        if (grid) grid.classList.toggle("editorial-grid--uniform", cat !== "all");
-        var visible = 0;
-        tiles.forEach(function (tile) {
-          var show = cat === "all" || tile.getAttribute("data-cat") === cat;
-          tile.classList.toggle("is-hidden", !show);
-          if (show) visible++;
-        });
-        /* Show a graceful note when a category has no images yet. */
-        if (galleryEmpty) galleryEmpty.hidden = visible > 0;
-      });
-    });
-  }
-
   /* ---------- Lightbox ---------- */
+  var tiles = document.querySelectorAll(".tile");
   var lightbox = document.querySelector(".lightbox");
   if (lightbox && tiles.length) {
     var lbImg = lightbox.querySelector("img");

@@ -438,16 +438,25 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .gallery__filter:hover { color: var(--ink); }
 .gallery__filter[aria-pressed="true"] { color: var(--clay); }
 .gallery__filter[aria-pressed="true"]::after { width: 100%; }
-/* Graceful note when a gallery category has no images yet */
-.gallery-empty {
-  text-align: center;
-  margin: clamp(3rem, 9vw, 7rem) auto;
-  max-width: 520px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  color: var(--muted);
+/* Gallery category sections (Residences / Grounds / Wild-Life) */
+.gallery-section { padding-block: clamp(3rem, 7vw, 5rem); }
+.gallery-section__head { text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem); }
+
+/* True masonry via CSS columns — keeps every photo's natural shape, no crop */
+.photo-masonry {
+  column-count: 3;
+  column-gap: clamp(0.6rem, 1.2vw, 1.1rem);
 }
+.photo-masonry .tile {
+  display: block;
+  width: 100%;
+  margin: 0 0 clamp(0.6rem, 1.2vw, 1.1rem);
+  break-inside: avoid;
+  cursor: zoom-in;
+}
+.photo-masonry .tile img { width: 100%; height: auto; object-fit: contain; }
+@media (max-width: 900px) { .photo-masonry { column-count: 2; } }
+@media (max-width: 560px) { .photo-masonry { column-count: 1; } }
 
 /* Editorial grid — a curated rhythm of feature, supporting, wide and grid tiles.
    Tiles span a 6-column grid; varied spans create the magazine-style layout.

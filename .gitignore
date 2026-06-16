@@ -12,3 +12,10 @@ assets/Serra Luma Website Structure.pdf
 # Superseded original floor plan (unused; may still show the street address).
 # The site uses the address-scrubbed assets/images/Floorplan.png instead.
 assets/images/floorplan1.jpeg
+
+# Full-resolution source photos (multi-MB each). The site serves the
+# web-optimised copies in assets/images/{residences,grounds,wildlife}/.
+# Originals are kept locally only — not committed or deployed.
+assets/images/The Residences/
+assets/images/The Grounds/
+assets/images/The Wild-Life/
