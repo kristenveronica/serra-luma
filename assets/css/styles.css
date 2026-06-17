@@ -155,7 +155,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   transition: color var(--transition);
 }
 .nav--solid .nav__links a { color: var(--forest); }
-.nav__links a::after {
+/* Underline uses ::before so the dropdown caret (::after) stays separate —
+   otherwise they merge and a current/hovered dropdown rotates into a vertical line. */
+.nav__links a::before {
   content: "";
   position: absolute;
   left: 0; bottom: 0;
@@ -163,8 +165,8 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   background: currentColor;
   transition: width var(--transition);
 }
-.nav__links a:hover::after,
-.nav__links a[aria-current="page"]::after { width: 100%; }
+.nav__links a:hover::before,
+.nav__links a[aria-current="page"]::before { width: 100%; }
 
 /* Mobile toggle */
 .nav__toggle {
@@ -824,7 +826,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--ink-on-dark) !important;
   white-space: nowrap;
 }
-.nav__drop a::after { display: none; }
+.nav__drop a::before, .nav__drop a::after { display: none; }
 .nav__drop a:hover { color: var(--clay) !important; }
 
 @media (max-width: 860px) {
