@@ -580,22 +580,16 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .why-image img { width: 100%; display: block; }
 
-/* The Experience — closing scroll cue to the Residence */
-.experience__cue {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: clamp(2rem, 5vw, 3rem);
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color var(--transition);
+/* The Experience — closing line (single line on desktop, wraps on mobile) */
+.experience__closer {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  color: var(--ink);
+  margin: clamp(1.75rem, 3vw, 2.5rem) auto 0;
+  max-width: 1000px;
 }
-.experience__cue:hover { color: var(--clay); }
-.experience__arrow { font-size: 1.5rem; line-height: 1; }
 
 /* Location — custom editorial map + destinations */
 .location__grid {
