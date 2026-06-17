@@ -505,6 +505,22 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 /* Filtered view → calm, uniform grid (no large feature spans) */
 .editorial-grid--uniform .tile { grid-column: span 2 !important; grid-row: span 1 !important; }
 
+/* Even 2-column gallery (e.g. residence) — equal cells, no orphan rows */
+.estate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.8rem, 1.8vw, 1.5rem);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+.estate-grid .tile {
+  grid-column: auto;
+  grid-row: auto;
+  aspect-ratio: 3 / 2;
+}
+@media (max-width: 620px) {
+  .estate-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 1000px) {
   .editorial-grid { grid-template-columns: repeat(4, 1fr); }
   .tile--feature, .tile--wide { grid-column: span 4; }
@@ -662,6 +678,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   margin: 0;
   max-width: 42ch;
 }
+.overview-spread__media--lead { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
 .feature-list { margin: 0; padding: 0; }
 .feature-list__row {
   display: grid;
