@@ -627,16 +627,20 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 
 /* Estate overview — editorial brochure spread (image left, feature list right) */
 .overview-spread {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.25rem, 5vw, 3.75rem);
+}
+.overview-spread__images {
   display: grid;
-  grid-template-columns: 47fr 53fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.8rem, 1.8vw, 1.5rem);
 }
 .overview-spread__media {
   margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
 }
 .overview-spread__media img {
   width: 100%; height: 100%;
@@ -644,14 +648,19 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   object-position: center;
   display: block;
 }
-.overview-spread__content { align-self: center; }
-.overview-spread__content .eyebrow { margin-bottom: 1rem; }
-.overview-spread__content h2 { margin: 0 0 1.25rem; }
+.overview-spread__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.overview-spread__lead .eyebrow { margin-bottom: 1rem; }
+.overview-spread__lead h2 { margin: 0 0 1.25rem; }
 .overview-spread__intro {
   color: var(--muted);
   line-height: 1.7;
-  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
-  max-width: 46ch;
+  margin: 0;
+  max-width: 42ch;
 }
 .feature-list { margin: 0; padding: 0; }
 .feature-list__row {
@@ -678,12 +687,11 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   line-height: 1.4;
   color: var(--ink);
 }
-@media (max-width: 900px) {
-  .overview-spread { grid-template-columns: 1fr; gap: clamp(1.75rem, 5vw, 2.5rem); }
-  .overview-spread__media { aspect-ratio: 5 / 4; }
-  .overview-spread__content { align-self: stretch; }
+@media (max-width: 760px) {
+  .overview-spread__content { grid-template-columns: 1fr; gap: clamp(1.5rem, 4vw, 2rem); }
 }
 @media (max-width: 540px) {
+  .overview-spread__images { grid-template-columns: 1fr; }
   .feature-list__row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 0; }
 }
 
