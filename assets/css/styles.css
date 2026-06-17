@@ -625,27 +625,66 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   .detail-block__title { position: static; }
 }
 
-/* Estate overview — broad land image + two-column feature list */
-.overview__media {
-  margin: clamp(2.5rem, 6vw, 4rem) 0;
-  border-radius: var(--radius);
+/* Estate overview — editorial brochure spread (image left, feature list right) */
+.overview-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: stretch;
+}
+.overview-spread__media {
+  margin: 0;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 21 / 9;
 }
-.overview__media img { width: 100%; height: 100%; object-fit: cover; }
-.overview-list {
-  list-style: none; padding: 0;
-  max-width: 1000px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 2.75rem;
+.overview-spread__media img {
+  width: 100%; height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.overview-list li { display: flex; gap: 0.85rem; align-items: baseline; line-height: 1.6; }
-.overview-list li::before {
-  content: ""; flex: none; width: 6px; height: 6px; margin-top: 0.6rem;
-  background: var(--eucalyptus); border-radius: 50%;
+.overview-spread__content { align-self: center; }
+.overview-spread__content .eyebrow { margin-bottom: 1rem; }
+.overview-spread__content h2 { margin: 0 0 1.25rem; }
+.overview-spread__intro {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 46ch;
 }
-@media (max-width: 680px) {
-  .overview-list { grid-template-columns: 1fr; gap: 0.75rem; }
-  .overview__media { aspect-ratio: 16 / 10; }
+.feature-list { margin: 0; padding: 0; }
+.feature-list__row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: clamp(0.85rem, 1.5vw, 1.1rem) 0;
+  border-top: 1px solid var(--line);
+}
+.feature-list__row:last-child { border-bottom: 1px solid var(--line); }
+.feature-list dt {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.feature-list dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+@media (max-width: 900px) {
+  .overview-spread { grid-template-columns: 1fr; gap: clamp(1.75rem, 5vw, 2.5rem); }
+  .overview-spread__media { aspect-ratio: 16 / 10; }
+  .overview-spread__media img { min-height: 0; }
+  .overview-spread__content { align-self: stretch; }
+}
+@media (max-width: 540px) {
+  .feature-list__row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 0; }
 }
 
 /* Location list */
