@@ -505,6 +505,26 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 /* Filtered view → calm, uniform grid (no large feature spans) */
 .editorial-grid--uniform .tile { grid-column: span 2 !important; grid-row: span 1 !important; }
 
+/* Pop-out tile — blows up dramatically over its neighbours on hover */
+.tile--popout { overflow: visible; }
+.tile--popout img { border-radius: var(--radius); transform-origin: center; }
+.tile--popout:hover { z-index: 30; }
+.tile--popout:hover img {
+  transform: scale(2.4);
+  box-shadow: 0 30px 80px rgba(10, 14, 16, 0.5);
+}
+@media (max-width: 700px), (hover: none) {
+  .tile--popout:hover img { transform: none; box-shadow: none; }
+}
+
+/* Studio — centred, enlarged outdoor garden image */
+.studio-outdoor {
+  margin: clamp(1.5rem, 4vw, 3rem) auto 0;
+  max-width: 66%;
+  aspect-ratio: 3 / 2;
+}
+@media (max-width: 700px) { .studio-outdoor { max-width: 100%; } }
+
 /* Even 2-column gallery (e.g. residence) — equal cells, no orphan rows */
 .estate-grid {
   display: grid;
