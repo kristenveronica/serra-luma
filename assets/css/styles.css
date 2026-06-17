@@ -559,6 +559,62 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   opacity: 0.85;
 }
 
+/* Location — custom editorial map + destinations */
+.location__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.location__map { margin: 0; }
+.location__svg {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-lg);
+}
+.location__body .eyebrow { margin-bottom: 1rem; }
+.location__body h2 { margin: 0 0 1.25rem; }
+.location__intro {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  max-width: 46ch;
+}
+.location__tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  color: var(--ink);
+  margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+}
+.location__list { margin: 0; padding: 0; }
+.location__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: clamp(0.85rem, 1.6vw, 1.1rem) 0;
+  border-top: 1px solid var(--line);
+}
+.location__row:last-child { border-bottom: 1px solid var(--line); }
+.location__row dt {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  color: var(--ink);
+}
+.location__row dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+@media (max-width: 860px) {
+  .location__grid { grid-template-columns: 1fr; gap: clamp(1.75rem, 5vw, 2.5rem); }
+  .location__map { order: -1; max-width: 520px; margin-inline: auto; }
+}
+
 /* Floor plan — closing the residence section */
 .floorplan {
   text-align: center;
