@@ -580,7 +580,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .why-image img { width: 100%; display: block; }
 
-/* The Experience — closing line (single line on desktop, wraps on mobile) */
+/* The Experience — wider text block, less vertical white space */
+.experience { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.experience .text-col { max-width: 1040px; }
 .experience__closer {
   text-align: center;
   font-family: var(--serif);
@@ -815,9 +817,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--muted);
   line-height: 1.7;
   margin: 0;
-  max-width: 42ch;
+  max-width: none;
 }
-.overview-spread__media--lead { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+.overview-spread__media--stack { margin-top: clamp(1.25rem, 2.5vw, 2rem); }
 .feature-list { margin: 0; padding: 0; }
 .feature-list__row {
   display: grid;
