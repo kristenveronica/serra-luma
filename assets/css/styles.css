@@ -104,6 +104,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .section { padding-block: var(--space-section); }
 .text-col { max-width: var(--maxw-text); }
 .center { text-align: center; margin-inline: auto; }
+/* Optional line breaks for desktop typography; collapse to natural flow
+   on smaller screens so text wraps cleanly on tablet and mobile. */
+@media (max-width: 899px) { br.brk { display: none; } }
 
 /* ==========================================================================
    Navigation
@@ -459,8 +462,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   cursor: zoom-in;
 }
 .photo-masonry .tile img { width: 100%; height: 100%; object-fit: cover; }
-@media (max-width: 900px) { .photo-masonry .tile { flex-basis: calc(50% - 0.6rem); } }
-@media (max-width: 560px) { .photo-masonry .tile { flex-basis: 100%; } }
+/* Two-up on tablet and phone — keeps an image-heavy gallery scannable rather
+   than an endless single column; tap any photo to view it full size. */
+@media (max-width: 900px) { .photo-masonry .tile { flex-basis: calc(50% - 0.5rem); } }
 
 /* Editorial grid — a curated rhythm of feature, supporting, wide and grid tiles.
    Tiles span a 6-column grid; varied spans create the magazine-style layout.
