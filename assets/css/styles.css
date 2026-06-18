@@ -561,12 +561,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   z-index: 5;
 }
 
-/* Retreat Potential — unified card (text + image, centred footer) */
-.retreat-card {
-  background: var(--stone);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.75rem, 4vw, 3.5rem);
-}
+/* Retreat Potential — card-style layout on a full-width stone band */
 .retreat-card__top {
   display: grid;
   grid-template-columns: 1fr 1fr;
