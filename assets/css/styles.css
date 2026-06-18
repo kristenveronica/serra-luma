@@ -568,7 +568,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
-.retreat-card__body .eyebrow { margin-bottom: 1rem; }
+.retreat-card__body .eyebrow { margin-bottom: 1rem; color: var(--clay); }
 .retreat-card__body h2 { margin: 0 0 1.25rem; }
 .retreat-card__body p { font-size: 1.02rem; line-height: 1.7; color: var(--ink); }
 .retreat-card__body p + p { margin-top: 1.1rem; }
@@ -579,7 +579,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .retreat-card .retreat-map { max-width: none; margin: 0; }
 .retreat-card .retreat-map figcaption { color: var(--muted); }
-.retreat-card .retreat-map--zoom:hover img { transform: scale(1.45); }
+.retreat-card .retreat-map--zoom:hover img { transform: scale(1.85); }
 .retreat-card__footer {
   text-align: center;
   margin-top: clamp(2rem, 4vw, 3rem);
@@ -609,14 +609,27 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   opacity: 0.85;
 }
 
-/* Why Serra Luma is Different — feature image */
+/* Why Serra Luma is Different — feature image (with hover enlargement) */
 .why-image {
   margin: clamp(2.5rem, 6vw, 4rem) auto;
   max-width: 900px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
 }
-.why-image img { width: 100%; display: block; }
+.why-image img {
+  width: 100%; display: block;
+  border-radius: var(--radius-lg);
+  transition: transform 0.55s var(--ease), box-shadow 0.55s var(--ease);
+  transform-origin: center;
+  cursor: zoom-in;
+}
+.why-image:hover img {
+  transform: scale(1.85);
+  box-shadow: 0 32px 80px rgba(10, 14, 16, 0.55);
+  position: relative;
+  z-index: 20;
+}
+@media (hover: none) {
+  .why-image:hover img { transform: none; box-shadow: none; }
+}
 
 /* The Experience — wider text block, less vertical white space */
 .experience { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
