@@ -1488,4 +1488,16 @@ a, button, .tile, .poss-card, .btn {
   line-height: 1.6;
   margin: 0 0 1.75rem;
 }
-.enquiry-modal__card .btn { min-width: 9rem; }
+.enquiry-modal__close {
+  display: inline-flex;
+  margin-inline: auto;          /* reliably centred within the card */
+  min-width: 11rem;
+  justify-content: center;
+}
+/* On-brand focus ring instead of the browser's default blue outline
+   (the button is auto-focused when the modal opens). */
+.enquiry-modal__close:focus { outline: none; }
+.enquiry-modal__close:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
