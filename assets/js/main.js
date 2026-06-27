@@ -188,16 +188,75 @@
       }
     }
 
-    form.addEventListener("submit", function (e) {
-      /* If a Netlify/Formspree endpoint is wired up, let it submit normally.
-         Otherwise show a graceful local confirmation. */
-      var isWired = form.hasAttribute("data-netlify") || (form.getAttribute("action") || "").indexOf("http") === 0;
-      if (isWired) return; // allow native submission
-      e.preventDefault();
-      if (status) {
-        status.textContent = "Thank you. Your enquiry has been noted — please connect this form to an email service to receive submissions (see README).";
+    /* Build the confirmation modal once and reuse it. */
+    function buildModal() {
+      var overlay = document.createElement("div");
+      overlay.className = "enquiry-modal";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-labelledby", "enquiry-modal-title");
+      overlay.innerHTML =
+        '<div class="enquiry-modal__card">' +
+          '<p class="enquiry-modal__eyebrow">Serra Luma</p>' +
+          '<h2 class="enquiry-modal__title" id="enquiry-modal-title">Thank you for your enquiry.</h2>' +
+          '<p class="enquiry-modal__text">We will be in touch with you within 48 hours.</p>' +
+          '<button type="button" class="btn btn--solid enquiry-modal__close">Close</button>' +
+        "</div>";
+      document.body.appendChild(overlay);
+
+      function close() {
+        overlay.classList.remove("is-open");
+        document.body.style.overflow = "";
       }
-      form.reset();
+      overlay.querySelector(".enquiry-modal__close").addEventListener("click", close);
+      overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) close(); // click backdrop to dismiss
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+      });
+      return overlay;
+    }
+
+    var modal = null;
+    function openModal() {
+      if (!modal) modal = buildModal();
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      var btn = modal.querySelector(".enquiry-modal__close");
+      if (btn) btn.focus();
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      /* Submit to Netlify Forms via AJAX so the visitor stays on the page and
+         we can show our own confirmation. Netlify records the submission and
+         fires the email notification exactly as with a native POST. */
+      if (status) status.textContent = "";
+      var submitBtn = form.querySelector("[type=submit]");
+      if (submitBtn) submitBtn.disabled = true;
+
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Submission failed (" + res.status + ")");
+          form.reset();
+          openModal();
+        })
+        .catch(function () {
+          if (status) {
+            status.textContent =
+              "Sorry — your enquiry could not be sent just now. Please email concierge@serraluma.com and we'll respond personally.";
+          }
+        })
+        .then(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 })();
