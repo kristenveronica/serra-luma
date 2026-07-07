@@ -1343,6 +1343,19 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: var(--forest);
+  /* Lift the video off the page with a soft, warm-toned drop shadow. */
+  box-shadow:
+    0 26px 60px -20px rgba(24, 24, 21, 0.45),
+    0 8px 24px -14px rgba(24, 24, 21, 0.30);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.film:hover {
+  transform: translateY(-4px);
+  /* On hover, deepen the shadow and add a subtle bronze glow so it pops. */
+  box-shadow:
+    0 36px 78px -20px rgba(24, 24, 21, 0.52),
+    0 0 0 1px rgba(176, 141, 87, 0.35),
+    0 0 42px -4px rgba(176, 141, 87, 0.40);
 }
 .film__video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .film__play {
