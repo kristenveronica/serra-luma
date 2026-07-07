@@ -1,7 +1,7 @@
 # Serra Luma — Estate Presentation Website
 
 A premium, editorial website for **Serra Luma** — a rare 134-acre architectural
-sanctuary in *Chowan Creek, Byron Bay Hinterland NSW*.
+sanctuary in *Chowan Creek, Tweed Valley Hinterland NSW*.
 
 Structured as a luxury **destination / estate presentation** (in the spirit of Aman
 Resorts and Six Senses) rather than a real estate listing — story-led, cinematic,

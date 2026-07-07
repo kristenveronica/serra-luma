@@ -326,11 +326,16 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .intro-card__lead {
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 1.05rem + 1.5vw, 2.1rem);
+  font-size: clamp(1.4rem, 1.05rem + 1.2vw, 1.75rem);
   line-height: 1.45;
   color: var(--ivory);
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto;
+}
+/* Keep the opening location line intact on one line at desktop widths;
+   it may wrap naturally on narrower screens. */
+@media (min-width: 960px) {
+  .intro-card__place { white-space: nowrap; }
 }
 .intro-card__note {
   max-width: 620px;
