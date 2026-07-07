@@ -337,6 +337,15 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 @media (min-width: 960px) {
   .intro-card__place { white-space: nowrap; }
 }
+
+/* Highlighted lead lines (e.g. the Future Chapters opening) — an elevated
+   serif emphasis that lifts key sentences above the surrounding body copy. */
+.why-highlight {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 1.05rem + 1.3vw, 1.75rem);
+  line-height: 1.4;
+  color: var(--forest);
+}
 .intro-card__note {
   max-width: 620px;
   margin: 1.75rem auto 0;
