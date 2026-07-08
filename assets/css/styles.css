@@ -313,8 +313,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
    line and a visitor note, giving clean separation from The Story below. */
 .hero-intro {
   text-align: center;
-  padding-top: clamp(3.5rem, 8vw, 6rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  background: var(--stone);   /* beige band under the hero, distinct from the ivory Story */
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 .intro-card {
   max-width: 920px;
@@ -353,7 +354,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   line-height: 1.75;
   color: var(--stone);
 }
-/* The Story and The Film use the uniform section spacing (var --space-section). */
+/* The Film uses the uniform section spacing (var --space-section).
+   The Story is pulled up close under the hero/intro band. */
+#story { padding-top: clamp(2.5rem, 6vw, 3.5rem); }
 
 /* Page hero (interior pages) */
 .page-hero {
