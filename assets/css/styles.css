@@ -354,8 +354,8 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--stone);
 }
 #story { padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: clamp(2rem, 4vw, 3rem); }
-/* Pull The Film up close to The Story above it */
-#film { padding-top: clamp(1.5rem, 4vw, 3rem); }
+/* The Film sits in its own beige panel — balanced padding top and bottom. */
+#film { padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
 
 /* Page hero (interior pages) */
 .page-hero {
