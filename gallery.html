@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -59,16 +59,28 @@
   </nav>
 
   <main id="main">
+    <!-- ===================== PAGE HERO ===================== -->
+    <header class="page-hero">
+      <!-- Mountain-through-the-deck hero. Seamless boomerang loop (plays forward then
+           gently back), so there is no hard cut at the loop point. -->
+      <video class="page-hero__bg" autoplay muted loop playsinline preload="auto"
+             poster="assets/images/gallery-hero-poster.jpg" aria-hidden="true">
+        <source src="assets/video/gallery-hero.mp4?v=1" type="video/mp4" />
+      </video>
+      <div class="page-hero__inner">
+        <h1>Gallery</h1>
+        <p>Life at Serra Luma.</p>
+      </div>
+    </header>
+
     <!-- ===================== INTRO ===================== -->
-    <section class="section" style="padding-top:clamp(7rem,14vw,10rem);padding-bottom:0">
+    <section class="section">
       <div class="wrap">
         <div class="gallery__head">
-          <p class="eyebrow reveal">Gallery</p>
-          <h2 class="reveal" data-delay="1">Life at Serra Luma</h2>
-          <p class="lead reveal" data-delay="2" style="max-width:640px;margin:1.25rem auto 0">
+          <p class="lead reveal" style="max-width:640px;margin:0 auto">
             Architecture, land, water, wildlife and a way of life shaped by nature, beauty and possibility.
           </p>
-          <div class="gallery__filters reveal" data-delay="2">
+          <div class="gallery__filters reveal" data-delay="1">
             <a class="gallery__filter" href="#residences">The Residences</a>
             <a class="gallery__filter" href="#grounds">The Grounds</a>
             <a class="gallery__filter" href="#wildlife">The Wild-Life</a>
@@ -245,6 +257,6 @@
     <img src="" alt="" />
   </div>
 
-  <script src="assets/js/main.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>

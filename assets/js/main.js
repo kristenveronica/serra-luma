@@ -259,4 +259,65 @@
         });
     });
   }
+
+  /* ---------- Crossfade video hero (page-hero[data-hero-loop]) ----------
+     Two stacked <video> layers play the same clip. Near the end of each cycle
+     the standby layer restarts from 0 and dissolves in over the active one, so
+     the loop never shows a hard cut ("stitch"). The first dissolve lands ~11s
+     into playback — comfortably clear of the initial page load. */
+  var heroLoop = document.querySelector("[data-hero-loop]");
+  if (heroLoop) {
+    var videos = heroLoop.querySelectorAll(".page-hero__video");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (videos.length === 2 && !reduce) {
+      var FADE = 0.85;            /* seconds — must match the CSS opacity transition */
+      var active = videos[0];
+      var standby = videos[1];
+      var swapping = false;
+      var noop = function () {};
+
+      var startPlay = function (v) {
+        var p = v.play();
+        if (p && p.catch) p.catch(noop);
+      };
+
+      var swap = function () {
+        if (swapping) return;
+        swapping = true;
+        var incoming = standby;
+        var outgoing = active;
+        incoming.currentTime = 0;
+        incoming.style.zIndex = "-2";   /* bring the incoming layer on top */
+        outgoing.style.zIndex = "-3";
+        startPlay(incoming);
+        requestAnimationFrame(function () {
+          incoming.classList.add("is-active");   /* fade in */
+        });
+        window.setTimeout(function () {
+          outgoing.pause();
+          outgoing.classList.remove("is-active");
+          active = incoming;
+          standby = outgoing;
+          swapping = false;
+        }, FADE * 1000);
+      };
+
+      videos.forEach(function (v) {
+        v.loop = false;
+        v.addEventListener("timeupdate", function () {
+          if (v !== active || swapping || !isFinite(v.duration)) return;
+          if (v.duration - v.currentTime <= FADE) swap();
+        });
+        /* Safety net: if a cycle ends before the fade fired (e.g. backgrounded tab). */
+        v.addEventListener("ended", function () {
+          if (v === active) swap();
+        });
+      });
+
+      startPlay(active);
+    } else if (reduce) {
+      /* Reduced-motion: hold on the poster / first frame, no autoplay loop. */
+      videos.forEach(function (v) { try { v.pause(); } catch (e) {} });
+    }
+  }
 })();

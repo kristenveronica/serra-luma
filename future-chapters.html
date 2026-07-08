@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -60,8 +60,17 @@
 
   <main id="main">
     <!-- ===================== PAGE HERO ===================== -->
-    <header class="page-hero">
-      <img class="page-hero__bg" src="assets/images/Land/image7.jpeg" alt="" aria-hidden="true" />
+    <header class="page-hero" data-hero-loop>
+      <!-- Dual-video crossfade loop: the two layers dissolve into one another near the
+           end of each 12s cycle, so the loop has no hard cut. The first dissolve happens
+           ~11s in — well clear of the initial page load. Poster shows instantly meanwhile. -->
+      <video class="page-hero__bg page-hero__video is-active" autoplay muted playsinline preload="auto"
+             poster="assets/images/future-chapters-poster.jpg" aria-hidden="true">
+        <source src="assets/video/future-chapters.web.mp4?v=1" type="video/mp4" />
+      </video>
+      <video class="page-hero__bg page-hero__video" muted playsinline preload="auto" aria-hidden="true">
+        <source src="assets/video/future-chapters.web.mp4?v=1" type="video/mp4" />
+      </video>
       <div class="page-hero__inner">
         <h1>Future Chapters</h1>
         <p>Endless possibilities.</p>
@@ -299,6 +308,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>
