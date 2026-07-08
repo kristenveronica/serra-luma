@@ -26,7 +26,7 @@
   --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 
   /* Spacing scale */
-  --space-section: clamp(4.5rem, 11vw, 10rem);
+  --space-section: clamp(4rem, 8vw, 6rem);   /* uniform ~1in (96px) top & bottom on all sections */
   --gutter: clamp(1.5rem, 5vw, 5rem);
   --maxw: 1280px;
   --maxw-text: 760px;
@@ -353,9 +353,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   line-height: 1.75;
   color: var(--stone);
 }
-#story { padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: clamp(2rem, 4vw, 3rem); }
-/* The Film sits in its own beige panel — balanced padding top and bottom. */
-#film { padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+/* The Story and The Film use the uniform section spacing (var --space-section). */
 
 /* Page hero (interior pages) */
 .page-hero {
@@ -462,7 +460,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   color: var(--ink-on-dark);
 }
 /* Gallery category sections (Residences / Grounds / Wild-Life) */
-.gallery-section { padding-block: clamp(3rem, 7vw, 5rem); }
+/* .gallery-section uses the uniform section spacing (var --space-section). */
 .gallery-section__head { text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem); }
 
 /* Even 3-up grid. Every photo is 3:2, so 3:2 cells show them in full with no
@@ -646,7 +644,6 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 
 /* The Experience — wider text block, less vertical white space */
-.experience { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .experience .text-col { max-width: 1040px; }
 .experience__closer {
   text-align: center;
@@ -1454,7 +1451,7 @@ a, button, .tile, .poss-card, .btn {
 
 /* Phone layout: tighten the vertical rhythm so pages don't feel endless. */
 @media (max-width: 620px) {
-  :root { --space-section: clamp(3.25rem, 9vw, 4.75rem); }
+  :root { --space-section: clamp(3rem, 9vw, 4rem); }
   .gallery__head { margin-bottom: 2rem; }
   .hero__inner { padding-top: 6rem; }
   .intro-card__lead { font-size: clamp(1.25rem, 1rem + 2.4vw, 1.6rem); }
