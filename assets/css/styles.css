@@ -667,7 +667,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 /* Location — custom editorial map + destinations */
 .location__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
@@ -717,7 +717,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 @media (max-width: 860px) {
   .location__grid { grid-template-columns: 1fr; gap: clamp(1.75rem, 5vw, 2.5rem); }
-  .location__map { order: -1; max-width: 520px; margin-inline: auto; }
+  .location__map { order: -1; max-width: 640px; margin-inline: auto; }
 }
 
 /* Floor plan — closing the residence section */
