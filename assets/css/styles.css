@@ -600,7 +600,7 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 }
 .retreat-card .retreat-map { max-width: none; margin: 0; }
 .retreat-card .retreat-map figcaption { color: var(--muted); }
-.retreat-card .retreat-map--zoom:hover img { transform: scale(1.85); }
+.retreat-card .retreat-map--zoom:hover img { transform: scale(1.51); }
 .retreat-card__footer {
   text-align: center;
   margin-top: clamp(2rem, 4vw, 3rem);
