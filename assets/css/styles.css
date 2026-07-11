@@ -172,7 +172,11 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
 .nav__toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: 0;
   padding: 8px;
@@ -731,6 +735,20 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   margin-inline: auto;
   border-radius: var(--radius);
   opacity: 0.96;
+}
+/* Touch devices: the plan detail is small on a phone — hint that it opens full size. */
+@media (hover: none) {
+  .floorplan a { display: inline-block; }
+  .floorplan a::after {
+    content: "Tap the plan to enlarge";
+    display: block;
+    margin-top: 0.9rem;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 }
 
 @media (max-width: 1000px) {
