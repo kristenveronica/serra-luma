@@ -337,7 +337,9 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   max-width: none;
   margin: 0 auto;
 }
-/* The opening positioning line wraps naturally across all widths. */
+/* The opening positioning line wraps naturally, and sits apart from the
+   supporting descriptor lines below it so the statement can breathe. */
+.intro-card__place { display: block; margin-bottom: 1.35rem; }
 
 /* Highlighted lead lines (e.g. the Future Chapters opening) — an elevated
    serif emphasis that lifts key sentences above the surrounding body copy. */
@@ -663,6 +665,16 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   margin: clamp(1.75rem, 3vw, 2.5rem) auto 0;
   max-width: 1000px;
 }
+/* Reflective editorial passage — each line stands on its own with even rhythm */
+.experience__passage { max-width: 42rem; margin-inline: auto; }
+.experience__passage p {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 1rem + 0.95vw, 1.55rem);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 1.2rem;
+}
+.experience__passage p:last-child { margin-bottom: 0; }
 
 /* Location — custom editorial map + destinations */
 .location__grid {
@@ -933,6 +945,17 @@ h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
   font-size: clamp(1.15rem, 1.6vw, 1.35rem);
   line-height: 1.4;
   color: var(--ink);
+}
+/* Clean, evenly-spaced bullet list (e.g. the Location facts) */
+.loc-list { list-style: none; margin: 0; padding: 0; }
+.loc-list li { position: relative; padding-left: 1.15em; }
+.loc-list li + li { margin-top: 0.5rem; }
+.loc-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+  line-height: inherit;
 }
 @media (max-width: 760px) {
   .overview-spread__content { grid-template-columns: 1fr; gap: clamp(1.5rem, 4vw, 2rem); }

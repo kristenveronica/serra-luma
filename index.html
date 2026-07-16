@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=11" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -61,10 +61,12 @@
   <main id="main">
     <!-- ===================== HERO ===================== -->
     <header class="hero">
-      <!-- Hero background: the Information Memorandum cover — Wollumbin at last light,
-           mist rising through the ranges. -->
-      <img class="hero__media" src="assets/images/hero-sunset.webp"
-           alt="Wollumbin (Mt Warning) at last light, mist rising through the ranges" aria-hidden="true" />
+      <!-- Hero montage: opens on a slow Ken Burns push-in over the sunset at Wollumbin,
+           then crossfades through the drone montage across the estate. Poster = sunset still. -->
+      <video class="hero__media" autoplay muted loop playsinline
+             poster="assets/images/hero-sunset.webp" aria-hidden="true">
+        <source src="assets/video/hero-sunset.mp4?v=1" type="video/mp4" />
+      </video>
       <div class="hero__inner">
         <h1 class="hero__name">Serra Luma</h1>
         <p class="hero__tag">Mountain of Light</p>
@@ -77,7 +79,7 @@
         <div class="intro-card reveal">
           <p class="intro-card__lead">
             <span class="intro-card__place">One of the Northern Rivers&rsquo; most private mountain estates,
-            located between Byron Bay and the Gold Coast.</span><br>
+            located between Byron Bay and the Gold Coast.</span>
             Thoughtfully designed.<br>
             Remarkably peaceful.<br>
             Limitlessly&nbsp;inspiring.
@@ -247,8 +249,8 @@
         <!-- A curated first look: hero feature, supporting frames and landscape bands
              sequenced so every row fills completely — closing on the creek. -->
         <div class="editorial-grid reveal" data-delay="1">
-          <figure class="tile tile--feature" data-full="assets/images/Land/image2.jpeg">
-            <img loading="lazy" src="assets/images/Land/image2.jpeg" alt="Wollumbin rising beyond the gardens" />
+          <figure class="tile tile--feature" data-full="assets/images/hero-sunset.webp">
+            <img loading="lazy" src="assets/images/hero-sunset.webp" alt="Sunset over Wollumbin (Mt Warning) from Serra Luma" />
             <figcaption class="tile__cap">The Ridgeline</figcaption>
           </figure>
           <figure class="tile" data-full="assets/images/Main%20House/image15.jpeg">
@@ -375,7 +377,7 @@
           Serra Luma is being offered through a discreet pre-market campaign.
         </p>
         <p class="enquire-note reveal" data-delay="2">
-          Enquire to receive the Information Memorandum, Contract for Sale and supporting information,
+          Enquire to receive the Information Memorandum, Contract of Sale and supporting information,
           or register your interest as the campaign progresses.
         </p>
         <div class="btn-row btn-row--center reveal" data-delay="2" style="margin-top:1.75rem">
